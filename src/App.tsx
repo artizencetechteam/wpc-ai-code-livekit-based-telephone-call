@@ -226,7 +226,7 @@ const App = () => {
             <Zap size={22} className="text-white" />
           </div>
           <div>
-            <h1 className="brand-title">VocalAI</h1>
+            <h1 className="brand-title">WPC</h1>
             <p className="brand-sub">LiveKit Powered Voice Agents</p>
           </div>
         </motion.div>
