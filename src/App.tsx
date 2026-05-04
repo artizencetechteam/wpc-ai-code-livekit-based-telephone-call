@@ -10,12 +10,12 @@ import {
   CheckCircle2,
   PhoneCall,
   X,
-  Zap,
   Bot,
   User2,
   Volume2,
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import logo from './assets/logo.png';
 import { 
   LiveKitRoom, 
   VoiceAssistantControlBar, 
@@ -53,10 +53,10 @@ const VoiceSession = ({ agentName }: { agentName: string }) => {
   }, [transcriptions]);
 
   const getStateColor = () => {
-    if (state === 'speaking') return '#22d3ee';
-    if (state === 'listening') return '#6366f1';
+    if (state === 'speaking') return '#0f80ff';
+    if (state === 'listening') return '#0b5bd3';
     if (state === 'thinking') return '#f59e0b';
-    return '#64748b';
+    return '#6b7c93';
   };
 
   const getStateLabel = () => {
@@ -85,7 +85,7 @@ const VoiceSession = ({ agentName }: { agentName: string }) => {
         </div>
 
         {/* Bar Visualizer */}
-        <div className="visualizer-box" style={{ borderColor: state === 'speaking' ? '#22d3ee44' : 'rgba(255,255,255,0.05)' }}>
+        <div className="visualizer-box" style={{ borderColor: state === 'speaking' ? '#0f80ff44' : 'rgba(12, 34, 66, 0.12)' }}>
           {state === 'speaking' && <div className="visualizer-glow" />}
           <BarVisualizer
             state={state}
@@ -223,7 +223,7 @@ const App = () => {
       <header className="app-header">
         <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} className="header-brand">
           <div className="brand-icon">
-            <Zap size={22} className="text-white" />
+            <img src={logo} alt="WPC Jobs" className="brand-logo" />
           </div>
           <div>
             <h1 className="brand-title">WPC</h1>
