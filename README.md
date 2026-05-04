@@ -6,6 +6,12 @@ It features a premium, interactive web interface and a scalable Python backend c
 
 ---
 
+## 🌐 Deployment
+
+For a quick guide on how to host this project on **Render**, see [**RENDER.md**](./RENDER.md).
+
+---
+
 ## 🚀 Key Features
 
 *   **Ultra-Low Latency:** Tuned for ~600ms–1s end-to-end latency to feel like a real human conversation.
