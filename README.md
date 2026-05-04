@@ -8,7 +8,9 @@ It features a premium, interactive web interface and a scalable Python backend c
 
 ## 🌐 Deployment
 
-For a quick guide on how to host this project on **Render**, see [**RENDER.md**](./RENDER.md).
+For complete, step-by-step instructions on hosting this project on **Render** or **Linux (Ubuntu)**, please see:
+
+👉 **[DEPLOYMENT.md](./DEPLOYMENT.md)**
 
 ---
 
