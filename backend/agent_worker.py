@@ -32,7 +32,7 @@ from dotenv import load_dotenv
 from livekit.agents import JobContext, WorkerOptions, cli, AutoSubscribe
 from livekit.agents.voice import Agent, AgentSession
 from livekit.agents.llm import FallbackAdapter
-from livekit.plugins import google, deepgram, openai
+from livekit.plugins import deepgram, openai
 
 load_dotenv()
 
@@ -99,7 +99,6 @@ async def entrypoint(ctx: JobContext):
     # 8b-instant: ~150-250ms TTFT — fastest available free model
     # 70b-versatile: ~350-600ms TTFT — higher quality but slower
     groq_key = os.environ.get("GROQ_API_KEY")
-    google_key = os.environ.get("GOOGLE_API_KEY")
 
     llm_options = []
     if groq_key:
@@ -115,11 +114,9 @@ async def entrypoint(ctx: JobContext):
             base_url="https://api.groq.com/openai/v1",
             api_key=groq_key,
         ))
-    if google_key:
-        llm_options.append(google.LLM(model="gemini-2.0-flash"))
 
     if not llm_options:
-        logger.error("No LLM keys found. Set GROQ_API_KEY or GOOGLE_API_KEY.")
+        logger.error("No LLM keys found. Set GROQ_API_KEY.")
         return
 
     llm = FallbackAdapter(llm_options) if len(llm_options) > 1 else llm_options[0]

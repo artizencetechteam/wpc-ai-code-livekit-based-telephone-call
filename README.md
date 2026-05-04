@@ -22,7 +22,7 @@ To achieve the best balance of speed, cost, and intelligence, Vocal Voice uses a
 
 *   **Speech-to-Text (STT):** Deepgram `nova-3` - ~50-100ms latency with extremely accurate streaming transcription.
 *   **Intelligence (LLM) - Primary:** Groq `llama-3.1-8b-instant` - Lightning-fast inference capable of starting a response in ~150ms.
-*   **Intelligence (LLM) - Fallback:** Groq `llama-3.3-70b-versatile` or Gemini `gemini-2.0-flash` - Kicks in automatically if the primary model hits rate limits.
+*   **Intelligence (LLM) - Fallback:** Groq `llama-3.3-70b-versatile` - Kicks in automatically if the primary model hits rate limits.
 *   **Text-to-Speech (TTS):** Deepgram `aura-2-andromeda-en` - High-quality, emotive streaming text-to-speech.
 
 ---
@@ -72,7 +72,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-*(If `requirements.txt` does not exist, simply run `pip install fastapi uvicorn livekit-server-sdk livekit-agents livekit-plugins-deepgram livekit-plugins-openai livekit-plugins-google python-dotenv python-multipart`)*
+*(If `requirements.txt` does not exist, simply run `pip install fastapi uvicorn livekit-server-sdk livekit-agents livekit-plugins-deepgram livekit-plugins-openai python-dotenv python-multipart`)*
 
 ---
 
@@ -91,9 +91,6 @@ DEEPGRAM_API_KEY=your_deepgram_api_key
 
 # 3. LLM Engine (Get from console.groq.com)
 GROQ_API_KEY=your_groq_api_key
-
-# (Optional) Fallback LLM Engine
-GOOGLE_API_KEY=your_gemini_api_key
 ```
 
 *Note: Make sure your API keys are kept secure. The `.gitignore` is already configured to prevent `.env` from being committed.*
